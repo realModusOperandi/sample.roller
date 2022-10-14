@@ -43,7 +43,7 @@ This project holds the modern, React-based frontend to our Roller business appli
 
 This application is intended to demonstrate a scenario where two separate Java EE application archives need to be deployed to the same server/JVM in order to work. 
 
-This means that you must deploy both the roller-ear.ear and roller-ui.war files to the same server or cluster.
+This means that you must deploy both the roller-ear.ear and roller-ui.war files to the same server or cluster. You can find roller-ear.ear in roller/roller-ear/build/libs, and roller-ui.war in roller-ui/build/libs.
 
 Furthermore, you must configure the roller-lib.jar as a shared library at the server level for all servers the application is deployed on, so that the same interface class can be applied both to the EJB itself and the JAX-RS class that injects and uses it. For WebSphere traditional that means referencing the shared library by the server classloader. For Liberty that requires doing a common library reference for both applications:
 
