@@ -7,8 +7,8 @@ This repo consists of two separate Gradle projects; you can import them into a s
 
 ### Roller
 This project holds an enterprise application divided into several Gradle subprojects:
-- ***roller-ejb:** Contains an EJB 3.x stateless bean for business logic. In this case, it knows how to roll a certain amount of dice with a certain count of sides and return the overall result.
-- ***roller-web:** An obsolete, servlet-based interface to the enterprise application. Currently doesn't match the actual functionality, since it's supposed to be deprecated in favor of Roller UI. 
+- **roller-ejb:** Contains an EJB 3.x stateless bean for business logic. In this case, it knows how to roll a certain amount of dice with a certain count of sides and return the overall result.
+- **roller-web:** An obsolete, servlet-based interface to the enterprise application. Currently doesn't match the actual functionality, since it's supposed to be deprecated in favor of Roller UI. 
 - **roller-ear:** Parent project that defines the overall enterprise application structure. No code here, but earlib dependencies should be defined here.
 - **roller-lib:** Not included in the roller archive, this project builds a jar containing the local interface for the EJB. It should be built and installed to your local m2 repo via the `:roller-lib:publishToMavenLocal` Gradle task before building Roller UI. 
 
