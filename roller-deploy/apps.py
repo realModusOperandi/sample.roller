@@ -1,0 +1,8 @@
+print 'Install backend application'
+AdminApp.install('/work/apps/roller-ear.ear', '[  -nopreCompileJSPs -distributeApp -nouseMetaDataFromBinary -nodeployejb -appname roller -createMBeansForResources -noreloadEnabled -nodeployws -validateinstall warn -noprocessEmbeddedConfig -filepermission .*\.dll=755#.*\.so=755#.*\.a=755#.*\.sl=755 -noallowDispatchRemoteInclude -noallowServiceRemoteInclude -asyncRequestDispatchType DISABLED -nouseAutoLink -noenableClientModule -clientMode isolated -novalidateSchema -MapModulesToServers [[ roller-ejb.jar roller-ejb.jar,META-INF/ejb-jar.xml WebSphere:cell=DefaultCell01,node=DefaultNode01,server=server1 ][ roller-war.war roller-war.war,WEB-INF/web.xml WebSphere:cell=DefaultCell01,node=DefaultNode01,server=server1 ]] -MapWebModToVH [[ roller-war.war roller-war.war,WEB-INF/web.xml default_host ]]]' )
+AdminConfig.save()
+
+print 'Install frontend application'
+AdminApp.install('/work/apps/roller-ui.war', '[  -nopreCompileJSPs -distributeApp -nouseMetaDataFromBinary -nodeployejb -appname roller-ui -createMBeansForResources -noreloadEnabled -nodeployws -validateinstall warn -noprocessEmbeddedConfig -filepermission .*\.dll=755#.*\.so=755#.*\.a=755#.*\.sl=755 -noallowDispatchRemoteInclude -noallowServiceRemoteInclude -asyncRequestDispatchType DISABLED -nouseAutoLink -noenableClientModule -clientMode isolated -novalidateSchema -contextroot roller-ui  -MapModulesToServers [[ roller-ui.war roller-ui.war,WEB-INF/web.xml WebSphere:cell=DefaultCell01,node=DefaultNode01,server=server1 ]] -MapWebModToVH [[ roller-ui.war roller-ui.war,WEB-INF/web.xml default_host ]] -CtxRootForWebMod [[ roller-ui.war roller-ui.war,WEB-INF/web.xml roller-ui ]]]' )
+AdminConfig.save()
+
