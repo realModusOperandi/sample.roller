@@ -3,3 +3,4 @@ binaries/
 **/.gradle
 **/build
 **/bin
+**/.DS_Store
